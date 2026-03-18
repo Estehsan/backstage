@@ -35,6 +35,7 @@
     ]
   },
   "dependencies": {
+    "@backstage-community/plugin-onboarding": "link:../../workspaces/onboarding/plugins/onboarding",
     "@backstage/app-defaults": "workspace:^",
     "@backstage/catalog-model": "workspace:^",
     "@backstage/cli": "workspace:^",

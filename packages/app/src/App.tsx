@@ -54,6 +54,10 @@ import devtoolsPlugin from '@backstage/plugin-devtools/alpha';
 import { unprocessedEntitiesDevToolsContent } from '@backstage/plugin-catalog-unprocessed-entities/alpha';
 import catalogPlugin from '@backstage/plugin-catalog/alpha';
 import InfoIcon from '@material-ui/icons/Info';
+import {
+  onboardingPlugin,
+  OnboardingPage,
+} from '@backstage-community/plugin-onboarding';
 
 /*
 
@@ -160,6 +164,15 @@ const devtoolsPluginUnprocessed = createFrontendModule({
   extensions: [unprocessedEntitiesDevToolsContent],
 });
 
+const convertedOnboardingPlugin = convertLegacyPlugin(onboardingPlugin, {
+  extensions: [
+    convertLegacyPageExtension(OnboardingPage, {
+      name: 'onboarding',
+      path: '/onboarding',
+    }),
+  ],
+});
+
 const collectedLegacyPlugins = convertLegacyAppRoot(
   <FlatRoutes>
     <Route path="/catalog-import" element={<CatalogImportPage />} />
@@ -180,6 +193,7 @@ const app = createApp({
     customHomePageModule,
     devtoolsPlugin,
     devtoolsPluginUnprocessed,
+    convertedOnboardingPlugin,
     ...collectedLegacyPlugins,
   ],
   advanced: {

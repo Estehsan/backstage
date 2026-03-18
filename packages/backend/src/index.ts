@@ -74,4 +74,9 @@ backend.add(rootSystemMetadataServiceFactory);
 
 backend.add(import('@backstage/plugin-events-backend-module-google-pubsub'));
 backend.add(import('@backstage/plugin-mcp-actions-backend'));
+backend.add(import('@backstage-community/plugin-onboarding-backend'));
+
+import { catalogModuleOnboardingEntityModel } from '@backstage-community/plugin-onboarding-backend';
+backend.add(catalogModuleOnboardingEntityModel);
+
 backend.start();

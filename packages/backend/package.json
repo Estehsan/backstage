@@ -30,6 +30,7 @@
     "test": "backstage-cli package test"
   },
   "dependencies": {
+    "@backstage-community/plugin-onboarding-backend": "link:../../workspaces/onboarding/plugins/onboarding-backend",
     "@backstage/backend-defaults": "workspace:^",
     "@backstage/backend-plugin-api": "workspace:^",
     "@backstage/catalog-model": "workspace:^",

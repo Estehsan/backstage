@@ -2456,6 +2456,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage-community/plugin-onboarding-backend@link:../../workspaces/onboarding/plugins/onboarding-backend::locator=example-backend%40workspace%3Apackages%2Fbackend":
+  version: 0.0.0-use.local
+  resolution: "@backstage-community/plugin-onboarding-backend@link:../../workspaces/onboarding/plugins/onboarding-backend::locator=example-backend%40workspace%3Apackages%2Fbackend"
+  languageName: node
+  linkType: soft
+
+"@backstage-community/plugin-onboarding@link:../../workspaces/onboarding/plugins/onboarding::locator=example-app%40workspace%3Apackages%2Fapp":
+  version: 0.0.0-use.local
+  resolution: "@backstage-community/plugin-onboarding@link:../../workspaces/onboarding/plugins/onboarding::locator=example-app%40workspace%3Apackages%2Fapp"
+  languageName: node
+  linkType: soft
+
 "@backstage/app-defaults@workspace:^, @backstage/app-defaults@workspace:packages/app-defaults":
   version: 0.0.0-use.local
   resolution: "@backstage/app-defaults@workspace:packages/app-defaults"
@@ -30964,6 +30976,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example-app@workspace:packages/app"
   dependencies:
+    "@backstage-community/plugin-onboarding": "link:../../workspaces/onboarding/plugins/onboarding"
     "@backstage/app-defaults": "workspace:^"
     "@backstage/catalog-model": "workspace:^"
     "@backstage/cli": "workspace:^"
@@ -31037,6 +31050,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "example-backend@workspace:packages/backend"
   dependencies:
+    "@backstage-community/plugin-onboarding-backend": "link:../../workspaces/onboarding/plugins/onboarding-backend"
     "@backstage/backend-defaults": "workspace:^"
     "@backstage/backend-plugin-api": "workspace:^"
     "@backstage/catalog-model": "workspace:^"

@@ -320,6 +320,19 @@ catalog:
       target: ../../plugins/scaffolder-backend/sample-templates/all-templates.yaml
       rules:
         - allow: [Template]
+    # Onboarding plugin example entities
+    - type: file
+      target: ../../workspaces/onboarding/examples/backend-engineer-template.yaml
+      rules:
+        - allow: [OnboardingTemplate]
+    - type: file
+      target: ../../workspaces/onboarding/examples/frontend-engineer-template.yaml
+      rules:
+        - allow: [OnboardingTemplate]
+    - type: file
+      target: ../../workspaces/onboarding/examples/sre-template.yaml
+      rules:
+        - allow: [OnboardingTemplate]
 
 scaffolder:
   auditor:
@@ -444,3 +457,50 @@ devTools:
   scheduledTasks:
     plugins:
       - catalog
+
+onboarding:
+  seedDemoData: true
+  templates:
+    defaults:
+      - name: software-engineer-onboarding
+        title: Software Engineer Onboarding
+        description: Standard onboarding checklist for new software engineers
+        phases:
+          - day-1
+          - week-1
+          - week-2
+          - month-1
+        tasks:
+          - id: setup-laptop
+            title: Set up development laptop
+            phase: day-1
+            type: manual
+          - id: access-github
+            title: Get GitHub org access
+            phase: day-1
+            type: manual
+          - id: join-slack
+            title: Join team Slack channels
+            phase: day-1
+            type: manual
+          - id: read-runbooks
+            title: Read team runbooks
+            phase: week-1
+            type: manual
+            dependsOn:
+              - access-github
+          - id: first-pr
+            title: Submit your first pull request
+            phase: week-1
+            type: manual
+            dependsOn:
+              - setup-laptop
+              - access-github
+          - id: shadow-oncall
+            title: Shadow an on-call rotation
+            phase: week-2
+            type: manual
+          - id: meet-stakeholders
+            title: Meet key stakeholders
+            phase: month-1
+            type: manual
